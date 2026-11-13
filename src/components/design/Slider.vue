@@ -16,11 +16,11 @@
           ></p>
           <div id="quote-author" class="heading-6 mb-6 font-semibold">
             <p>{{ people[index].author }}</p>
-            <p class="text-flax-smoke-400">{{ people[index].position }}</p>
+            <p class="text-slate-blue">{{ people[index].position }}</p>
           </div>
           <div id="quote-tags" class="flex gap-3">
             <p
-              class="border-flax-smoke-500 text-flax-smoke-600 rounded-full border px-3 uppercase"
+              class="border-satin-gold text-slate-blue rounded-full border px-3 uppercase"
               v-for="i in people[index].tags"
               :key="i"
             >
@@ -37,7 +37,7 @@
             >
               {{ index + 1 }}
             </p>
-            <p class="h-0.5 w-full bg-black"></p>
+            <p class="h-0.5 w-full bg-satin-gold"></p>
             <p>{{ people.length }}</p>
           </div>
           <div
@@ -56,10 +56,15 @@
         class="columns-gap relative order-first col-span-full flex h-[60vh] w-full items-start justify-center overflow-clip max-sm:order-last lg:order-last lg:col-span-6 lg:h-full"
       >
         <img
-          :class="{ hidden: index !== 0 }"
-          class="relative z-10 size-full rounded-lg object-cover object-center mix-blend-screen brightness-90 grayscale lg:h-[85svh]"
+          :class="[
+            { hidden: index !== 0 },
+            index === 0
+              ? 'object-contain brightness-100 grayscale-0'
+              : 'object-cover mix-blend-screen brightness-90 grayscale',
+          ]"
+          class="relative z-10 size-full rounded-lg object-center lg:h-[85svh]"
           :src="people[0].profile"
-          alt=""
+          alt="Vicente Czar's Instagram profile"
         />
         <img
           :class="{ hidden: index !== 1 }"
@@ -69,7 +74,7 @@
         />
         <div
           id="quote-overlay"
-          class="bg-flax-smoke-500 absolute inset-0 z-50 rounded-lg"
+          class="bg-satin-gold absolute inset-0 z-50 rounded-lg"
         ></div>
       </div>
     </template>
@@ -87,9 +92,14 @@
             <div class="col-span-3">
               <div class="columns-gap flex w-full flex-col gap-y-4">
                 <img
-                  class="aspect-square size-full rounded-md object-cover object-center mix-blend-screen brightness-90 grayscale"
+                  :class="
+                    i === 0
+                      ? 'object-contain brightness-100 grayscale-0'
+                      : 'object-cover mix-blend-screen brightness-90 grayscale'
+                  "
+                  class="aspect-square size-full rounded-md object-center"
                   :src="p.profile"
-                  alt=""
+                  :alt="i === 0 ? 'Vicente Czar Instagram profile' : ''"
                 />
 
                 <p
@@ -100,7 +110,7 @@
 
                 <div class="heading-6 mt-4 font-semibold">
                   <p class="">{{ p.author }}</p>
-                  <p class="text-flax-smoke-400">
+                  <p class="text-slate-blue">
                     {{ p.position }}
                   </p>
                 </div>
@@ -109,7 +119,7 @@
                   class="flex max-w-60 flex-wrap gap-3 leading-[200%] uppercase"
                 >
                   <p
-                    class="border-flax-smoke-500 text-flax-smoke-600 rounded-full border px-3 text-nowrap uppercase"
+                    class="border-satin-gold text-slate-blue rounded-full border px-3 text-nowrap uppercase"
                     v-for="i in p.tags"
                     :key="i"
                   >
@@ -126,12 +136,14 @@
 </template>
 
 <script setup lang="ts">
-  import { esmail, mohammad } from '@/assets/images';
+  import { esmail } from '@/assets/images';
   import { Button } from '../common';
   import { computed, onMounted, ref } from 'vue';
   import { useWindowSize } from '@vueuse/core';
   import { textSplitterIntoChar } from '@/functions';
   import gsap from 'gsap';
+
+  const instagramMockup = `${import.meta.env.BASE_URL}${encodeURIComponent('Mockup Iphone.png')}`;
 
   const { width } = useWindowSize();
   const isSmallScreen = computed(() => width.value < 640);
@@ -261,18 +273,18 @@
   const people = [
     {
       quote:
-        'Collaborating with Hetari on multiple projects has been a true pleasure. His exceptional skills, attention to detail, and commitment to quality consistently made him an invaluable asset to the team.',
-      author: 'Mohammad AL-Sulami',
-      position: 'Full Stack Developer',
-      tags: ['Web Development', 'Animation', 'UI/UX'],
-      profile: mohammad,
+        'More than 60,000 people follow Vicente Czar on Instagram for insights at the intersection of science, technology, and human behavior, shaped by his work as an Executive Director at Pandimus Society, Senior UI/UX Designer, and Software Engineer.',
+      author: 'Instagram',
+      position: '60K+ community',
+      tags: ['Digital craft', 'Engineering', 'Brand building'],
+      profile: instagramMockup,
     },
     {
       quote:
-        'Working with Ebraheem on the Axon website has been an exceptional experience. His invaluable support and dedication were crucial in bringing this project to life. Thank you, Ebraheem!',
-      author: 'Esmail Atta',
-      position: 'Founder of Axon',
-      tags: ['Web Development', 'SEO'],
+        'Vicente shares his work with an audience of 58,000+ on TikTok and 80,000+ on YouTube, extending digital craft beyond the screen.',
+      author: 'TikTok & YouTube',
+      position: '58K+ on TikTok · 80K+ on YouTube',
+      tags: ['Digital authority', 'Creative practice'],
       profile: esmail,
     },
   ];

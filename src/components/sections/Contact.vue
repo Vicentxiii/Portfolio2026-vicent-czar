@@ -4,7 +4,7 @@
     class="relative min-h-svh w-full overflow-y-clip p-[4vh] select-none"
   >
     <div
-      class="flex-center relative h-[92vh] w-full flex-col rounded-lg bg-black uppercase"
+      class="flex-center relative h-[92vh] w-full flex-col rounded-lg bg-midnight-navy uppercase"
     >
       <video
         class="absolute bottom-0 left-0 size-full rounded-lg object-cover object-bottom brightness-50"
@@ -17,32 +17,29 @@
       <!-- :style="'background-image: url(' + contact + ') !important; '" -->
       <div class="flex-center z-10 flex-col gap-y-10">
         <p
-          class="heading-4 text-flax-smoke-300 max-w-[30ch] text-center font-mono"
+          class="heading-4 text-slate-blue max-w-[30ch] text-center font-mono"
         >
-          Your design is a masterpiece waiting to become alive.
+          Bring engineering rigor and aesthetic excellence to your next product.
         </p>
         <h3
           id="make-it-happen"
-          class="heading-1 text-flax-smoke-200 max-w-[10ch] text-center leading-none"
+          class="heading-1 text-ivory max-w-[10ch] text-center leading-none"
           v-html="makeItHappen"
         ></h3>
         <div
           class="mt-[5%] flex scale-150 items-center lg:scale-[1.5] xl:scale-[3] 2xl:scale-[3.5]"
         >
-          <!-- <Button
-            :data-cal-namespace="dataCalNamespace"
-            :data-cal-link="dataCalLink"
-            :data-cal-config="dataCalConfig"
-            label="Get in touch"
-          /> -->
-          <Button label="Get in touch" url="https://wa.me/967775367671" />
+          <Button
+            label="Connect on LinkedIn"
+            url="https://www.linkedin.com/in/vicenteczar/"
+          />
         </div>
       </div>
       <div
         class="absolute bottom-5 flex w-full items-center justify-center px-5 md:justify-between"
       >
         <div class="hidden md:flex">
-          <div class="border-flax-smoke-300 relative border">
+          <div class="border-satin-gold relative border">
             <Vue3Lottie
               ref="customControl"
               :animationData="earthLottie"
@@ -51,26 +48,26 @@
             />
           </div>
           <div
-            class="flex-center py border-flax-smoke-300 text-flax-smoke-300 w-fit flex-col border border-l-0 font-mono"
+            class="flex-center py border-satin-gold text-slate-blue w-fit flex-col border border-l-0 font-mono"
           >
             <p
-              class="border-flax-smoke-300 flex size-full items-center justify-start border-b pr-2 pl-1 font-bold"
+              class="border-satin-gold flex size-full items-center justify-start border-b pr-2 pl-1 font-bold"
             >
               Working Globally
             </p>
             <p class="flex size-full items-center justify-start pr-2 pl-1">
-              Available Sep '24
+              Transcent Digital
             </p>
           </div>
         </div>
 
-        <div class="heading-6 text-flax-smoke-500 w-fit">
-          <p class="w-full font-bold uppercase">For further inquiries</p>
+        <div class="heading-6 text-satin-gold w-fit">
+          <p class="w-full font-bold uppercase">Follow the work</p>
           <Link
-            class="text-flax-smoke-300 h-6 text-right font-medium tracking-wider lowercase"
-            label="hetari4all@gmail"
+            class="text-champagne-gold h-6 text-right font-medium tracking-wider lowercase"
+            label="@vicenteczar.dev"
             :icon="true"
-            url="mailto:hetari4all@gmail"
+            url="https://instagram.com/vicenteczar.dev"
           />
         </div>
       </div>
@@ -87,7 +84,6 @@
   import { onBeforeMount, onMounted, ref } from 'vue';
   import { textSplitterIntoChar } from '@/functions';
   import { animateSplitText } from '@/animations';
-  // import { dataCalConfig, dataCalLink, dataCalNamespace } from '@/data';
 
   const makeItHappen = ref("Let's Make it happen");
   onBeforeMount(() => {

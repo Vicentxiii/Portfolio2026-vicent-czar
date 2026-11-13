@@ -5,5 +5,21 @@ import work2 from './work2.webm';
 import work3 from './work3.webm';
 import work4 from './work4.webm';
 import work5 from './work5.webm';
+import svUnico from './sv-unico.mp4';
+import silviaCorretora from './silvia-corretora.mp4';
+import ringsLuxury from './rings-luxury.mp4';
+import fernandoQuincas from './fernando-quincas.mp4';
 
-export { earthLottie, contact, work1, work2, work3, work4, work5 };
+export {
+	earthLottie,
+	contact,
+	work1,
+	work2,
+	work3,
+	work4,
+	work5,
+	svUnico,
+	silviaCorretora,
+	ringsLuxury,
+	fernandoQuincas,
+};

@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="w-full fill-flax-smoke-900"
+    class="w-full fill-champagne-gold"
     viewBox="-0.986 137.36 592.342 73.279"
     style="enable-background: new 0 0 595.3 841.9"
     xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@
     </g>
   </svg>
   <!-- <svg
-    class="w-full fill-flax-smoke-800"
+    class="w-full fill-rich-navy"
     viewBox="0 0 817 107"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

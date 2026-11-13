@@ -1,10 +1,11 @@
 <template>
-  <h1 class="sr-only">Ebraheem Alhetari - ابراهيم الهتاري</h1>
-  <h2 class="sr-only">Web Developer - مطور ويب</h2>
-
-  <MyEnName id="svg-my-en-name" :class="$attrs.class" />
+  <h1
+    id="svg-my-en-name"
+    :class="$attrs.class"
+    class="flex w-full items-center gap-[0.2em] overflow-hidden font-fancy text-4xl leading-[0.85] font-extrabold uppercase text-champagne-gold sm:text-6xl md:text-7xl xl:text-8xl"
+    aria-label="Vicente Czar"
+  >
+    <span class="wordmark inline-block translate-y-full will-change-auto">Vicente</span>
+    <span class="wordmark inline-block translate-y-full will-change-auto">Czar</span>
+  </h1>
 </template>
-
-<script setup lang="ts">
-  import { MyEnName } from '..';
-</script>

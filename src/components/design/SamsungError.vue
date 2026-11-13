@@ -1,15 +1,15 @@
 <template>
   <div
     id="samsung-error-modal"
-    class="flex-center fixed inset-0 z-50 h-svh w-svw bg-black/75 opacity-0"
+    class="flex-center fixed inset-0 z-50 h-svh w-svw bg-midnight-navy/75 opacity-0"
   >
     <div
-      class="flex-center z-50 mx-auto size-full h-1/2 w-11/12 flex-col rounded-lg bg-white p-5 shadow-sm md:w-1/2"
+      class="flex-center z-50 mx-auto size-full h-1/2 w-11/12 flex-col rounded-lg bg-rich-navy p-5 text-ivory shadow-sm md:w-1/2"
     >
       <div class="flex flex-col items-center text-center">
-        <div class="inline-block rounded-full bg-yellow-50 p-4">
+        <div class="inline-block rounded-full bg-champagne-gold p-4">
           <svg
-            class="h-12 w-12 fill-current text-yellow-500"
+            class="h-12 w-12 fill-current text-satin-gold"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -19,10 +19,10 @@
             />
           </svg>
         </div>
-        <h2 class="mt-2 font-semibold text-gray-800">
+        <h2 class="mt-2 font-semibold text-ivory">
           It seems you're using the <b>Samsung Internet Browser</b>.
         </h2>
-        <p class="mt-2 w-full text-start text-sm leading-relaxed text-gray-600">
+        <p class="mt-2 w-full text-start text-sm leading-relaxed text-slate-blue">
           Some features might not work as expected, especially in dark mode, to
           fix it please follow the steps below:
         </p>
@@ -34,7 +34,7 @@
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            color="#000000"
+            color="#F8FAFC"
             fill="none"
           >
             <path
@@ -57,7 +57,7 @@
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            color="#000000"
+            color="#F8FAFC"
             fill="none"
           >
             <path
@@ -84,7 +84,7 @@
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            color="#000000"
+            color="#F8FAFC"
             fill="none"
           >
             <path
@@ -111,7 +111,7 @@
 
       <div class="mt-3 flex w-full items-center" @click="handleClick">
         <button
-          class="flex-1 rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200"
+          class="flex-1 rounded-md bg-satin-gold px-4 py-2 text-sm font-medium text-midnight-navy hover:bg-champagne-gold"
         >
           OK
         </button>
@@ -122,7 +122,7 @@
 
 <script setup lang="ts">
   import { displayNone } from '@/animations';
-  import { lenis } from '@/main';
+  import { lenis } from '@/lenis';
   import { onMounted } from 'vue';
 
   const handleClick = () => {

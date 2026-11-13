@@ -19,7 +19,7 @@ const navLinks = [
     url: '#about-me-section',
   },
   {
-    label: 'Testimonials',
+    label: 'Recognition',
     url: '#testimonials-section',
   },
   {
@@ -37,45 +37,35 @@ const navbarLinks = [
 
 const socialLinks = [
   {
-    label: 'X',
-    url: 'https://x.com/hetaridev',
-  },
-  {
-    label: 'Telegram',
-    url: 'https://t.me/e_1_e',
-  },
-  {
-    label: 'GitHub',
-    url: 'https://github.com/hetari',
+    label: 'Instagram',
+    url: 'https://instagram.com/vicenteczar.dev',
   },
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/hetaridev/',
+    url: 'https://www.linkedin.com/in/vicenteczar/',
   },
 ];
 
 const resourceLinks = [
   {
-    label: 'Pillarstack',
-    url: 'https://www.pillarstack.com',
+    label: 'Transcent Digital',
+    url: 'https://transcentacademy.com.br/transcentdigital',
   },
   {
-    label: 'Figma Template',
-    url: 'https://www.figma.com/community/file/1328038510191576951/project-starter-template',
+    label: 'SV ÚNICO on G1',
+    url: 'https://g1.globo.com/carros/noticia/2026/04/24/supercarro-brasileiro-de-r-15-milhao-ganha-configurador-virtual.ghtml',
+  },
+  {
+    label: 'SV ÚNICO on InfoMoney',
+    url: 'https://www.infomoney.com.br/consumo/super-veloce-unico-configurador/',
   },
 ];
 
 const heroText =
-  'A freelance full-stack developer, making good shit since 2023, hiding bad shit since 2023.';
+  'Engineering Rigor & Aesthetic Excellence. Architecting high-converting digital products.';
 
-const locationPlace = `15°22'22.0"N 44°10'39.5"E`;
-const locationCountry = 'Yemen, Sanaa';
-
-// cal.com
-const dataCalNamespace = '30min';
-const dataCalLink = 'brhoom/30min';
-const dataCalConfig =
-  '{"layout":"month_view", "theme": "dark", "brand": "#8C8C73"}';
+const locationPlace = 'Working across borders';
+const locationCountry = 'International Studio';
 
 export {
   socialLinks,
@@ -85,7 +75,4 @@ export {
   locationCountry,
   navLinks,
   navbarLinks,
-  dataCalNamespace,
-  dataCalLink,
-  dataCalConfig,
 };

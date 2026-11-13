@@ -1,7 +1,7 @@
 <template>
   <section
     id="about-me-section"
-    class="common-padding text-flax-smoke-200 relative z-10 overflow-y-clip rounded-b-3xl bg-[#0B0B0A] shadow-2xl will-change-auto sm:mt-0"
+    class="common-padding text-ivory relative z-10 overflow-y-clip rounded-b-3xl bg-rich-navy shadow-2xl will-change-auto sm:mt-0"
   >
     <div class="md:column-gap grid grid-cols-12">
       <div class="hide-on-mobile overflow-hidden md:col-span-4">
@@ -37,31 +37,31 @@
         <img
           :src="profile2"
           class="aspect-[1/1.5] rounded-lg object-cover object-top mix-blend-screen brightness-90 grayscale"
-          alt="Headshot of Ebraheem facing a camera"
+          alt="Portrait of Vicente Czar"
         />
       </div>
       <div class="col-span-11 mt-10 md:col-span-8 md:col-start-6">
         <p
           class="heading-4 relative w-full max-w-[40ch] leading-snug font-medium text-balance"
         >
-          With a passion for design and development, I take projects from
-          ideation to launch, ensuring a seamless journey that leaves a lasting
-          positive impact on the digital landscape and your business.
+          Senior Full Stack Engineer, UX Architect, and Luxury Brand Builder
+          with 8+ years of experience. I created SV ÚNICO, Latin America's first
+          supercar configurator, bringing robust engineering to digital
+          authority.
         </p>
 
         <div
-          class="text-flax-smoke-300 mt-[5%] flex justify-start gap-10 sm:gap-20"
+          class="text-slate-blue mt-[5%] flex justify-start gap-10 sm:gap-20"
         >
-          <p class="heading-6 text-flax-smoke-300/85 text-center text-nowrap">
+          <p class="heading-6 text-slate-blue/85 text-center text-nowrap">
             ( ABOUT ME )
           </p>
           <p class="heading-6 font-fancy w-full text-balance sm:max-w-[40ch]">
-            Creating great web experiences is my primary focus. I ensure each
-            project leaves users with a feel-good sensation through meticulous
-            attention to detail and user-centric design principles. <br /><br />
-            When I'm not immersed in web development and design, you can find me
-            sharing insights about my freelance journey on <i>&Xopf;</i>,
-            loudly, playing music (Funk), or just relaxing.
+            Digital craftsmanship is the discipline of treating code as fine
+            art, backed by real-world traction: 60K+ on Instagram, 58K+ on
+            TikTok, and 80K+ on YouTube. <br /><br />
+            I bring the same focus to every line of code that earned me a #2
+            ranking in Brazil as a multi-category Boxing and Muay Thai champion.
           </p>
         </div>
       </div>
@@ -75,11 +75,11 @@
     xToZero,
     animateAboutMeSectionLeave,
   } from '@/animations';
-  import { profile2 } from '@/assets/images';
   import { textSplitterIntoChar } from '@/functions';
   import { onBeforeMount, onMounted, ref } from 'vue';
 
-  const aboutMe = ref('ٍSelected Projects /');
+  const profile2 = `${import.meta.env.BASE_URL}${encodeURIComponent('about me.png')}`;
+  const aboutMe = ref('Digital Craftsman /');
 
   // const initialPath = ref(`M0 0H${width.value}  V${height.value} H0 Z`);
   // const targetPath = ref(
@@ -88,7 +88,7 @@
 
   onBeforeMount(() => {
     aboutMe.value = textSplitterIntoChar(
-      'Programmer, Developer, Web-animator/',
+      'Digital Craftsman/',
       true,
       true,
     );

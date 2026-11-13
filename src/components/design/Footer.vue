@@ -10,7 +10,7 @@
         :class="{ 'md:col-span-6': section.title === 'Menu' }"
       >
         <p
-          class="heading-5 border-flax-smoke-400 w-full border-b pb-2 font-bold"
+          class="heading-5 border-satin-gold w-full border-b pb-2 font-bold"
         >
           {{ section.title }}
         </p>
@@ -29,7 +29,7 @@
     <div class="grid w-full grid-cols-12">
       <div class="col-span-7 place-content-center md:col-span-6">
         <h6 class="heading-4 sm:heading-2 leading-none font-bold">
-          © {{ new Date().getFullYear() }} Huy <br />
+          © {{ new Date().getFullYear() }} Vicente Czar <br />
           All rights reserved.
         </h6>
       </div>
@@ -37,7 +37,8 @@
       <div
         class="col-span-5 place-content-center max-sm:place-content-end md:col-span-3"
       >
-        <p class="heading-6 font-bold uppercase">Hetari's Local time</p>
+        <p class="heading-6 font-bold uppercase">Studio reference time</p>
+          <p class="heading-6 font-bold uppercase">Reference time (UTC+3)</p>
         <p class="heading-6">{{ myLocalTime }}</p>
         <p class="heading-6 font-bold uppercase">Your Local time</p>
         <p class="heading-6">{{ userLocalTime }}</p>
@@ -50,7 +51,7 @@
           <div
             @click="lenis.scrollTo('#app', { duration: 2 })"
             id="scroll-to-top"
-            class="flex-center bg-flax-smoke-400 size-20 cursor-pointer flex-col rounded-full"
+            class="flex-center bg-satin-gold size-20 cursor-pointer flex-col rounded-full"
           >
             <svg
               class="size-1/2"
@@ -59,7 +60,7 @@
               viewBox="0 0 24 24"
               width="24"
               height="24"
-              color="#000000"
+              color="#050B18"
               fill="none"
             >
               <path
@@ -88,7 +89,7 @@
   import { navbarLinks, resourceLinks, socialLinks } from '@/data';
   import { Link } from '..';
   import { onMounted, ref } from 'vue';
-  import { lenis } from '@/main';
+  import { lenis } from '@/lenis';
   import MagneticEffect from '../MagneticEffect.vue';
   import moment from 'moment-timezone';
 

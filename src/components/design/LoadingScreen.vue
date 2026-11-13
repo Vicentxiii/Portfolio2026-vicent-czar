@@ -8,21 +8,21 @@
       <svg
         :width="width"
         :height="height * 2"
-        class="fill-flax-smoke-800 absolute top-0 z-0 h-[calc(100%_+_300px)] brightness-50"
+        class="fill-rich-navy absolute top-0 z-0 h-[calc(100%_+_300px)] brightness-50"
       >
         <path ref="path" class="w-full" :d="pathData"></path>
       </svg>
       <div
         id="text"
         style="transform: translateZ(0px)"
-        class="text-flax-smoke-50/75 z-1 flex size-full flex-col items-center justify-center text-center text-4xl font-bold opacity-0 md:text-6xl"
+        class="text-ivory/75 z-1 flex size-full flex-col items-center justify-center text-center text-4xl font-bold opacity-0 md:text-6xl"
         :class="{ 'text-4xl font-bold md:text-6xl': true }"
       >
         <h3 class="overflow-clip">
           <span
             class="loading-text inline-block translate-y-full will-change-auto"
           >
-            Hetari
+            Vicente Czar
           </span>
         </h3>
 

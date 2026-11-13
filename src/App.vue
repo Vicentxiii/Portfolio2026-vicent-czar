@@ -45,7 +45,7 @@
   <main class="relative min-h-full">
     <Hero />
     <div
-      class="text-flax-smoke-200 relative rounded-t-3xl bg-[#0B0B0A] py-[5%]"
+      class="text-ivory relative rounded-t-3xl bg-rich-navy py-[5%]"
     >
       <Services />
       <Marquee />
@@ -80,7 +80,7 @@
   import { useWindowSize } from '@vueuse/core';
 
   import { Navbar } from './components/common';
-  import { lenis, raf } from './main';
+  import { lenis, raf } from './lenis';
   const { width, height } = useWindowSize();
   const noise: Ref<HTMLElement | null> = ref(null);
 

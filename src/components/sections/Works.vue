@@ -7,17 +7,17 @@
         class="heading-1 text-start leading-none font-bold uppercase"
       ></h3>
       <p
-        class="heading-1 text-flax-smoke-400 text-opacity-50 hidden w-4/5 text-end font-extrabold sm:block"
+        class="heading-1 text-slate-blue text-opacity-50 hidden w-4/5 text-end font-extrabold sm:block"
       >
         ( {{ selectedWorksProps.length }} )
       </p>
 
       <div
         id="selected-works-text"
-        class="md:column-gap text-flax-smoke-300 mt-[5%] grid grid-cols-12 justify-end opacity-0 lg:grid"
+        class="md:column-gap text-slate-blue mt-[5%] grid grid-cols-12 justify-end opacity-0 lg:grid"
       >
         <p
-          class="heading-6 text-flax-smoke-300/85 col-span-4 text-center text-nowrap lg:col-start-2"
+          class="heading-6 text-slate-blue/85 col-span-4 text-center text-nowrap lg:col-start-2"
         >
           (
           <span class="inline sm:hidden">{{ selectedWorksProps.length }} </span>
@@ -26,8 +26,8 @@
         <p
           class="heading-4 font-fancy col-span-8 w-full text-balance sm:font-semibold lg:col-span-7"
         >
-          Featured client projects that have been meticulously crafted with
-          passion and purpose over the years.
+          Selected digital products engineered to turn ambitious ideas into
+          measurable commercial results.
         </p>
       </div>
     </div>
@@ -36,7 +36,7 @@
       class="sm:column-gap relative mt-12 grid size-full grid-cols-12 lg:mt-[10%]"
     >
       <div
-        class="text-flax-smoke-100 sticky top-12 col-span-5 hidden h-fit w-full overflow-hidden text-[22vw] leading-[0.8] font-semibold md:flex"
+        class="text-champagne-gold sticky top-12 col-span-5 hidden h-fit w-full overflow-hidden text-[22vw] leading-[0.8] font-semibold md:flex"
       >
         <span class="font-title! relative -tracking-wider">0</span>
         <span
@@ -55,7 +55,12 @@
           :key="i"
           class="work-card @container"
         >
-          <a class="group" target="_blank" :href="work.url">
+          <component
+            :is="work.url ? 'a' : 'div'"
+            class="group"
+            :href="work.url"
+            :target="work.url ? '_blank' : undefined"
+          >
             <div
               class="flex-center relative aspect-square overflow-clip rounded-lg"
             >
@@ -74,36 +79,35 @@
                   :src="work.videoSrc"
                   muted
                   :autoplay="false"
-                  type="video/webm"
                   class="size-[80%] rounded-md object-contain blur transition-all duration-500 ease-in-out"
                 ></video>
               </div>
             </div>
             <div>
               <p class="heading-6 font-title! mt-[2%] mb-[1%] leading-none">
-                {{ work.category }}
+              {{ work.category }}
               </p>
               <div class="items-center justify-between sm:flex">
                 <h3 class="heading-3 font-title! font-bold uppercase">
                   {{ work.name }}
                 </h3>
-                <div class="flex gap-1.5 select-none">
+                <div class="flex flex-wrap gap-1.5 select-none">
                   <p
-                    class="border-flax-smoke-300 hover:bg-flax-smoke-300 hover:text-flax-smoke-900 rounded-full border px-4 py-2 transition-[background-color,color] duration-500 ease-in-out"
+                    class="border-satin-gold hover:bg-satin-gold hover:text-midnight-navy rounded-full border px-4 py-2 transition-[background-color,color] duration-500 ease-in-out"
                     v-for="tag in work.tags"
                     :key="tag"
                   >
                     <span>{{ tag }}</span>
                   </p>
                   <p
-                    class="border-flax-smoke-300 bg-flax-smoke-300 text-flax-smoke-900 hover:text-flax-smoke-300 rounded-full border px-4 py-2 transition-[background-color,color] duration-500 ease-in-out hover:bg-transparent"
+                    class="border-satin-gold bg-satin-gold text-midnight-navy hover:text-champagne-gold rounded-full border px-4 py-2 transition-[background-color,color] duration-500 ease-in-out hover:bg-transparent"
                   >
                     <span>{{ work.year }}</span>
                   </p>
                 </div>
               </div>
             </div>
-          </a>
+          </component>
         </div>
       </aside>
     </div>
@@ -116,8 +120,7 @@
   import { computed, onBeforeMount, onMounted, ref, useTemplateRef } from 'vue';
   import gsap from 'gsap';
   import { useWindowSize } from '@vueuse/core';
-  import { work1, work2, work3, work4, work5 } from '@/assets/videos';
-  import { workBg1, workBg2, workBg3, workBg4, workBg5 } from '@/assets/images';
+  import { svUnico, silviaCorretora, ringsLuxury, fernandoQuincas } from '@/assets/videos';
   const videoRefs = useTemplateRef<HTMLVideoElement[]>('videoRefs');
 
   const isSmallScreen = computed(() => {
@@ -125,6 +128,12 @@
   });
   const index = ref(0);
   const selectedWorks = ref('Selected Projects /');
+  const projectBackgrounds = [
+    'Fundo 01 novo.jpg',
+    'Fundo card 02 novo.jpg',
+    'fUNDO CARD 03.jpg',
+    'Fundo card 04.jpg',
+  ].map((filename) => `${import.meta.env.BASE_URL}${encodeURIComponent(filename)}`);
 
   const tl = gsap
     .timeline({ defaults: { duration: 0.25 } })
@@ -143,50 +152,39 @@
 
   const selectedWorksProps = [
     {
-      name: 'Madar',
-      category: 'Frontend',
-      tags: ['Vue.js', 'Tailwind', 'Gsap'],
-      videoSrc: work5,
-      imageBg: workBg5,
-      url: 'https://madar.services/',
-      year: '2025',
+      name: 'SV ÚNICO',
+      category: "Real-time 2D/3D · Latin America's First Supercar Configurator",
+      tags: ['$300k+ / R$ 1.5M', '50,000+ combinations', '1.3M+ week-one requests'],
+      videoSrc: svUnico,
+      imageBg: projectBackgrounds[0],
+      url: 'https://g1.globo.com/carros/noticia/2026/04/24/supercarro-brasileiro-de-r-15-milhao-ganha-configurador-virtual.ghtml',
+      year: '2026',
     },
     {
-      name: 'Iphone 15 Clone',
-      category: 'Frontend & Animation & 3D',
-      tags: ['Animation', '3D'],
-      videoSrc: work2,
-      imageBg: workBg2,
-      url: 'https://github.com/Hetari/iphone15-pro-clone',
-      year: '2024',
+      name: 'Rings Luxury',
+      category: 'Luxury 18k Gold · Bespoke E-Commerce for Jorge Uquillas Atelier',
+      tags: ['Hand-engraved 18k gold', 'São Paulo · Miami', '50+ countries'],
+      videoSrc: ringsLuxury,
+      imageBg: projectBackgrounds[1],
+      url: 'https://ringsluxuryart.com/',
+      year: 'R$ 4M+',
     },
     {
-      name: 'Axon',
-      category: 'Frontend & Documentation',
-      tags: ['Vue.js', 'Tailwind', 'AI'],
-      videoSrc: work3,
-      imageBg: workBg3,
-      url: 'https://github.com/Hetari/axon',
-
-      year: '2024',
+      name: 'Fernando Quincas',
+      category: 'Sculpture, Mineral Art & Digital Gallery',
+      tags: ['Artist Portfolio', 'Sculpture & Natural Stone', 'Online Atelier'],
+      videoSrc: fernandoQuincas,
+      imageBg: projectBackgrounds[2],
+      year: '2026',
     },
     {
-      name: 'Blogy',
-      category: 'Frontend & Backend',
-      tags: ['Vue.js', 'Laravel'],
-      videoSrc: work4,
-      imageBg: workBg4,
-      url: 'https://github.com/Hetari/blog',
-      year: '2023',
-    },
-    {
-      name: 'Pyutube',
-      category: 'CLI Tool & Cross Platform',
-      tags: ['Python', 'CLI', 'Youtube'],
-      videoSrc: work1,
-      imageBg: workBg1,
-      url: 'https://github.com/hetari/pyutube',
-      year: '2024',
+      name: 'Silvia Helena Corretora',
+      category: 'Luxury Real Estate · Bespoke Website & Dedicated Admin Panel',
+      tags: ['Property Discovery', 'Dedicated Admin Panel', 'Butantã · Morumbi · Taboão'],
+      videoSrc: silviaCorretora,
+      imageBg: projectBackgrounds[3],
+      url: 'https://www.silviahelenacorretora.com.br',
+      year: '2026',
     },
   ];
 

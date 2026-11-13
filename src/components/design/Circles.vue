@@ -13,7 +13,7 @@
       />
       <path
         d="M92.75 234.997C-6.70156 163.282 -29.1866 24.5246 42.5283 -74.927C114.243 -174.379 253.001 -196.864 352.453 -125.149C451.904 -53.4338 474.389 85.324 402.674 184.776C330.959 284.227 192.202 306.712 92.75 234.997Z"
-        fill="#D1D1C7"
+        fill="#F3E5AB"
       />
       <defs>
         <linearGradient
@@ -24,8 +24,8 @@
           y2="-64.7502"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#AFAF9D" />
-          <stop offset="1" stop-color="#AFAF9D" stop-opacity="0" />
+          <stop stop-color="#D4AF37" />
+          <stop offset="1" stop-color="#D4AF37" stop-opacity="0" />
         </linearGradient>
       </defs>
     </svg>
