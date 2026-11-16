@@ -5,7 +5,7 @@
     <SamsungError />
   </template>
 
-  <div class="pointer-events-none fixed inset-0 z-50">
+  <div class="pointer-events-none fixed inset-0 z-50 max-md:hidden">
     <svg
       class="h-[150vh] w-full object-cover object-center"
       xmlns="http://www.w3.org/2000/svg"

@@ -32,7 +32,7 @@
 
     <div class="padding-y md:column-gap mt-6 grid grid-cols-12">
       <div
-        class="pointer-events-none col-span-full content-end rounded-lg select-none md:col-span-4"
+        class="pointer-events-none col-span-full content-end rounded-lg select-none md:col-span-4 md:block hidden"
       >
         <img
           :src="profile2"
